@@ -1,0 +1,84 @@
+- id: l1k3
+  alias: push HA configuration to GitHub repo
+  trigger:
+    # Everyday at 23:23:23 time
+    - at: "00:11:22"
+      platform: time
+  action:
+    - data:
+        addon: a0d7b954_ssh
+        input: /config/scripts/ha_gitpush.sh
+      service: hassio.addon_stdin
+
+- id: "1621798099476"
+  alias: Turn Lights on at Sunset
+  description: ""
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: +00:15:00
+  condition: []
+  action:
+    - type: turn_on
+      device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
+      entity_id: switch.front_lights
+      domain: switch
+  mode: single
+- id: "1621798166837"
+  alias: Turn Lights off at Sunrise
+  description: ""
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: -00:15:00
+  condition: []
+  action:
+    - scene: scene.sunrise_ewe_basic_001
+  mode: single
+- id: "1621975430746"
+  alias: Turn borehole pump ON
+  description: ""
+  trigger:
+    - platform: time
+      at: 05:00:00
+  condition: []
+  action:
+    - type: turn_on
+      device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
+      entity_id: switch.front_lights
+      domain: switch
+  mode: single
+- id: "1621975516679"
+  alias: Turn borehole pump OFF
+  description: ""
+  trigger:
+    - platform: time
+      at: 05:10:00
+  condition: []
+  action:
+    - type: turn_off
+      device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
+      entity_id: switch.front_lights
+      domain: switch
+  mode: single
+- id: "1622146023424"
+  alias: Turn Front Security Lights OFF
+  description: Turn Front Security Lights OFF at sunrise
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: -00:15:00
+  condition: []
+  action:
+    - scene: scene.sunrise_ewe_basic_001
+  mode: single
+- id: "1622146877743"
+  alias: Turn front security lights ON
+  description: ""
+  trigger:
+    - platform: sun
+      event: sunset
+  condition: []
+  action:
+    - scene: scene.sunset_scene_for_ewe_basic_001
+  mode: single

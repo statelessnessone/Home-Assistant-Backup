@@ -1,0 +1,17 @@
+- id: '1621973111905'
+  name: Switch security lights OFF
+  entities:
+    switch.1000c684e9:
+      restored: true
+      supported_features: 0
+      friendly_name: Front Lights
+      state: 'off'
+  icon: mdi:lightning
+- id: '1621973458267'
+  name: Sunset scene for EWE-Basic-001
+  entities:
+    switch.1000c684e9:
+      restored: true
+      supported_features: 0
+      friendly_name: EWE-Basic-001
+      state: 'on'
