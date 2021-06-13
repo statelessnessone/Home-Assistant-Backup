@@ -1,3 +1,15 @@
+homeassistant:
+  #  packages: !include_dir_named packages
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  unit_system: metric
+  time_zone: Africa/Johannesburg
+  name: Home
+
+  allowlist_external_dirs: # changed from whitelist_external_dirs to allowlist_external_dirs in 0.113.0
+    - /config/
+
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
@@ -11,3 +23,13 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 
 discovery:
+
+switch:
+  - platform: template
+    switches:
+      ewelink_virtual_switch:
+        turn_on:
+          service: switch.turn_on
+        turn_off:
+          service: switch.turn_off
++

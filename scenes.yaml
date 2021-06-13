@@ -13,5 +13,5 @@
     switch.1000c684e9:
       restored: true
       supported_features: 0
-      friendly_name: EWE-Basic-001
+      friendly_name: SecurityLights
       state: 'on'
