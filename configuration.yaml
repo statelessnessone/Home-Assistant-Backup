@@ -4,7 +4,7 @@ homeassistant:
   longitude: !secret home_longitude
   elevation: !secret home_elevation
   unit_system: metric
-  time_zone: Africa/Johannesburg
+  time_zone: !secret home_timezone
   name: Home
 
   allowlist_external_dirs: # changed from whitelist_external_dirs to allowlist_external_dirs in 0.113.0
@@ -21,5 +21,8 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+notify: !include notify.yaml
+
+shell_command: !include shell_commands.yaml
 
 discovery:

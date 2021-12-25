@@ -1,0 +1,4 @@
+- name: !secret slack_name
+  platform: slack
+  api_key: !secret slack_api_key
+  default_channel: "#home-automation"

@@ -1,10 +1,68 @@
 - id: l1k3
   alias: push HA configuration to GitHub repo
   trigger:
-  - at: 00:11:22
+  - at: 00:11
     platform: time
   action:
-  - data:
-      addon: a0d7b954_ssh
-      input: /config/scripts/ha_gitpush.sh
-    service: hassio.addon_stdin
+  - service: shell_command.github_push
+  - service: notify.random_place_on_slack
+    data:
+      message: Config pushed to GitHub
+      title: GitHub
+- id: '1640377297758'
+  alias: Turn security lights off 14 hours after switch on
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
+    entity_id: switch.front_lights
+    domain: switch
+  condition:
+  - condition: device
+    type: is_on
+    device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
+    entity_id: switch.front_lights
+    domain: switch
+  action:
+  - delay:
+      hours: 14
+      minutes: 0
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
+    entity_id: switch.front_lights
+    domain: switch
+  mode: single
+- id: '1640409763650'
+  alias: 'Front Security Lights - ON: Notifcation'
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
+    entity_id: switch.front_lights
+    domain: switch
+  condition: []
+  action:
+  - service: notify.random_place_on_slack
+    data:
+      title: Front security lights are on
+      message: Security Lights
+  mode: single
+- id: '1640410380980'
+  alias: 'Front Security Lights - OFF: Notifcation'
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
+    entity_id: switch.front_lights
+    domain: switch
+  condition: []
+  action:
+  - service: notify.random_place_on_slack
+    data:
+      message: Front Security Lights switched OFF
+  mode: single
