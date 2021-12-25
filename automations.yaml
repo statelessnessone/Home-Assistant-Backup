@@ -48,15 +48,14 @@
   action:
   - service: notify.random_place_on_slack
     data:
-      title: Front security lights are on
-      message: Security Lights
+      message: Front Security Lights switched ON
   mode: single
 - id: '1640410380980'
   alias: 'Front Security Lights - OFF: Notifcation'
   description: ''
   trigger:
   - platform: device
-    type: turned_on
+    type: turned_off
     device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
     entity_id: switch.front_lights
     domain: switch
@@ -64,5 +63,5 @@
   action:
   - service: notify.random_place_on_slack
     data:
-      message: Front Security Lights switched OFF
+      message: Front Security Lights Switched OFF
   mode: single
