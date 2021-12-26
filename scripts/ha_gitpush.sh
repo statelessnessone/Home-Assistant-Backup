@@ -2,9 +2,9 @@
 # Change this to your Home Assistant config folder if it is different
 cd /config
 
-timestmp = "`date +'%d-%m-%Y %H:%M:%S'`"
+push_label = "`date +'%d-%m-%Y %H:%M:%S'`"
 
-echo "config file on $(timestmp)"
+echo $(push_label)
 echo "===================================="
 # Add all files to the repository with respect to .gitignore rules
 git add .
