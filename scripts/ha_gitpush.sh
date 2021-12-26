@@ -3,7 +3,7 @@ echo "===================================="
 # Go to /config folder or 
 cd /config
 
-push_label = "`date +'%d-%m-%Y %H:%M:%S'`"
+push_label="`date +'%d-%m-%Y %H:%M:%S'`"
 
 echo $push_label
 # Add all files to the repository with respect to .gitignore rules
