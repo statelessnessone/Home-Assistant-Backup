@@ -1,1 +1,2 @@
+# push to github, with output log
 github_push: "sh /config/scripts/ha_gitpush.sh >> /config/scripts/logs/ha_gitpush.log"
