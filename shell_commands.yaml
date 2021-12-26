@@ -1,1 +1,1 @@
-github_push: "sh /config/scripts/ha_gitpush.sh >> /config/scripts/ha_gitpush.log"
+github_push: "sh /config/scripts/ha_gitpush.sh >> /config/scripts/logs/ha_gitpush.log"
