@@ -14,7 +14,7 @@ echo "------------------------------------"
 git add .
 
 # Commit changes with message with current date stamp
-git commit -m '$push_label'
+git commit -m '$(push_label)'
 
 # Push changes towards GitHub
 git push -u origin master
