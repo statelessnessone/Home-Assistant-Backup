@@ -4,7 +4,7 @@ cd /config
 
 push_label = "`date +'%d-%m-%Y %H:%M:%S'`"
 
-echo $(push_label)
+echo $push_label
 echo "===================================="
 # Add all files to the repository with respect to .gitignore rules
 git add .
