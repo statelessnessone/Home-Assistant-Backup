@@ -4,8 +4,8 @@ cd /config
 
 timestmp = "`date +'%d-%m-%Y %H:%M:%S'`"
 
-echo "config file on " $(timestmp)
-echo '===================================='
+echo "config file on $(timestmp)"
+echo "===================================="
 # Add all files to the repository with respect to .gitignore rules
 git add .
 
@@ -15,5 +15,5 @@ git commit -m "config files on `date +'%d-%m-%Y %H:%M:%S'`"
 # Push changes towards GitHub
 git push -u origin master
 git push
-echo 'git push done!'
-echo '==============
+echo "git push done!"
+echo "=============="
