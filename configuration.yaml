@@ -25,7 +25,7 @@ notify: !include notify.yaml
 
 shell_command: !include shell_commands.yaml
 
- discovery:
-
 recorder:
   db_url: !secret homeassistant_mariabd_connecturl
+
+discovery:

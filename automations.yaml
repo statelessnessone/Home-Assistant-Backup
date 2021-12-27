@@ -14,15 +14,15 @@
   description: ''
   trigger:
   - platform: device
-    type: turned_on
-    device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
-    entity_id: switch.front_lights
+    type: turned_off
+    device_id: c8cf0cd1fff326675aff23b855632d77
+    entity_id: switch.borehole
     domain: switch
   condition:
   - condition: device
-    type: is_on
-    device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
-    entity_id: switch.front_lights
+    type: is_off
+    device_id: c8cf0cd1fff326675aff23b855632d77
+    entity_id: switch.borehole
     domain: switch
   action:
   - delay:
@@ -41,8 +41,8 @@
   trigger:
   - platform: device
     type: turned_on
-    device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
-    entity_id: switch.front_lights
+    device_id: c8cf0cd1fff326675aff23b855632d77
+    entity_id: switch.front_security_lights
     domain: switch
   condition: []
   action:
@@ -56,6 +56,21 @@
   trigger:
   - platform: device
     type: turned_off
+    device_id: c8cf0cd1fff326675aff23b855632d77
+    entity_id: switch.front_security_lights
+    domain: switch
+  condition: []
+  action:
+  - service: notify.random_place_on_slack
+    data:
+      message: Front Security Lights Switched OFF
+  mode: single
+- id: '1640609364054'
+  alias: 'Borehole Pump: ON - Notification'
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
     device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
     entity_id: switch.front_lights
     domain: switch
@@ -63,5 +78,181 @@
   action:
   - service: notify.random_place_on_slack
     data:
-      message: Front Security Lights Switched OFF
+      message: 'Borehole Pump: ON'
+  mode: single
+- id: '1640609444745'
+  alias: 'Borehole Pump: OFF - Notification'
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
+    entity_id: switch.front_lights
+    domain: switch
+  condition: []
+  action:
+  - service: notify.random_place_on_slack
+    data:
+      message: 'Borehole Pump: OFF'
+  mode: single
+- id: '1640618138399'
+  alias: Store Room Door - OPENED
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: bdf152c3a693446f927a87f7f9fd3d8f
+    entity_id: binary_sensor.tools_door
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.random_place_on_slack
+    data:
+      message: Store Room Door - Opened
+  mode: single
+- id: '1640618384056'
+  alias: Store Room Door - CLOSED
+  description: ''
+  trigger:
+  - type: not_opened
+    platform: device
+    device_id: bdf152c3a693446f927a87f7f9fd3d8f
+    entity_id: binary_sensor.tools_door
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.random_place_on_slack
+    data:
+      message: Store Room Door - CLOSED
+  mode: single
+- id: '1640618456721'
+  alias: Shed Door - OPENED
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: bdf152c3a693446f927a87f7f9fd3d8f
+    entity_id: binary_sensor.shed_door
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.random_place_on_slack
+    data:
+      message: Shed Door - OPENED
+  mode: single
+- id: '1640618518794'
+  alias: Shed Door - CLOSED
+  description: ''
+  trigger:
+  - type: not_opened
+    platform: device
+    device_id: bdf152c3a693446f927a87f7f9fd3d8f
+    entity_id: binary_sensor.shed_door
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.random_place_on_slack
+    data:
+      message: Shed Door - CLOSED
+  mode: single
+- id: '1640618572656'
+  alias: Shack Door - OPENED
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: bdf152c3a693446f927a87f7f9fd3d8f
+    entity_id: binary_sensor.shack_door
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.random_place_on_slack
+    data:
+      message: Shack Door - OPENED
+  mode: single
+- id: '1640618623022'
+  alias: Shack Door - CLOSED
+  description: ''
+  trigger:
+  - type: not_opened
+    platform: device
+    device_id: bdf152c3a693446f927a87f7f9fd3d8f
+    entity_id: binary_sensor.shack_door
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.random_place_on_slack
+    data:
+      message: Shack Door - CLOSED
+  mode: single
+- id: '1640623908555'
+  alias: Tank Low - Start Borehole
+  description: ''
+  trigger:
+  - type: not_opened
+    platform: device
+    device_id: bd13743833f9ed28baa679e297f1eaed
+    entity_id: binary_sensor.tank_empty
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+  condition:
+  - type: is_open
+    condition: device
+    device_id: bd13743833f9ed28baa679e297f1eaed
+    entity_id: binary_sensor.tank_full
+    domain: binary_sensor
+  action:
+  - type: turn_on
+    device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
+    entity_id: switch.front_lights
+    domain: switch
+  - service: notify.random_place_on_slack
+    data:
+      message: 'Auto: Tank Low - Borehole Pump Started'
+  mode: single
+- id: '1640624090963'
+  alias: Tank Full - Stop Borehole
+  description: ''
+  trigger:
+  - type: not_opened
+    platform: device
+    device_id: bd13743833f9ed28baa679e297f1eaed
+    entity_id: binary_sensor.tank_full
+    domain: binary_sensor
+  condition:
+  - type: is_open
+    condition: device
+    device_id: bd13743833f9ed28baa679e297f1eaed
+    entity_id: binary_sensor.tank_empty
+    domain: binary_sensor
+  action:
+  - type: turn_off
+    device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
+    entity_id: switch.front_lights
+    domain: switch
+  - service: notify.random_place_on_slack
+    data:
+      message: 'Auto - Tank Full - Borehole Pump Stopped '
+  mode: single
+- id: '1640624465414'
+  alias: Leaving home, warning if shed is open
+  description: ''
+  trigger:
+  - platform: zone
+    entity_id: person.hardus
+    zone: zone.home
+    event: leave
+  condition:
+  - type: is_open
+    condition: device
+    device_id: bdf152c3a693446f927a87f7f9fd3d8f
+    entity_id: binary_sensor.shack_door
+    domain: binary_sensor
+  action:
+  - service: notify.random_place_on_slack
+    data:
+      message: Shed is still open!!!!
   mode: single
