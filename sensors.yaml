@@ -1,0 +1,82 @@
+- platform: emoncms
+  api_key: !secret emon_api
+  url: !secret emon_url
+  scan_interval: 5
+  id: 1
+  unit_of_measurement: "W"
+  include_only_feed_id:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+  sensor_names:
+    1: "Feed: Municipal"
+    2: "Pressure Pump"
+    3: "Borehole"
+    4: "Scullery"
+    5: "Kitchen: Microwave+Kettle"
+    6: "Spare 1"
+    7: "Bedroom Plugs: Main Bed + Spare"
+    8: "Bedroom Plugs: Kids + Study"
+    9: "Kitchen: Fridge + Oven"
+    10: "Feed: Generator"
+    11: "None 11"
+    12: "None 12"
+    13: "None 13"
+    14: "None 14"
+    15: "None 15"
+    16: "None 16"
+
+- platform: emoncms
+  api_key: !secret emon_api
+  url: !secret emon_url
+  scan_interval: 60
+  id: 2
+  unit_of_measurement: "kWh"
+  include_only_feed_id:
+    - 101
+    - 102
+    - 103
+    - 104
+    - 105
+    - 106
+    - 107
+    - 108
+    - 109
+    - 1010
+    - 1011
+    - 1012
+    - 1013
+    - 1014
+    - 1015
+    - 1016
+
+  sensor_names:
+    101: "Feed: Municipal"
+    102: "Pressure Pump"
+    103: "Borehole"
+    104: "Scullery"
+    105: "Kitchen: Microwave+Kettle"
+    106: "Spare 1"
+    107: "Bedroom Plugs: Main Bed + Spare"
+    108: "Bedroom Plugs: Kids + Study"
+    109: "Kitchen: Fridge + Oven"
+    1010: "Feed: Generator"
+    1011: "None 11"
+    1012: "None 12"
+    1013: "None 13"
+    1014: "None 14"
+    1015: "None 15"
+    1016: "None 16"

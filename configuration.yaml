@@ -29,3 +29,5 @@ recorder:
   db_url: !secret homeassistant_mariabd_connecturl
 
 discovery:
+
+sensor: !include sensors.yaml
