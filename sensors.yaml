@@ -16,28 +16,19 @@
     - 9
     - 10
     - 11
-    - 12
-    - 13
-    - 14
-    - 15
-    - 16
+
   sensor_names:
-    1: "Feed: Municipal"
-    2: "Pressure Pump"
-    3: "Borehole"
-    4: "Scullery"
-    5: "Kitchen: Microwave+Kettle"
-    6: "Spare 1"
-    7: "Bedroom Plugs: Main Bed + Spare"
-    8: "Bedroom Plugs: Kids + Study"
-    9: "Kitchen: Fridge + Oven"
-    10: "Feed: Generator"
-    11: "None 11"
-    12: "None 12"
-    13: "None 13"
-    14: "None 14"
-    15: "None 15"
-    16: "None 16"
+    1: "Feed: Municipal" # Main Switch
+    2: "Pressure Pump" # Plugs / Pump
+    3: "Borehole" # Plugs/3
+    4: "Scullery" # Plugs/4
+    5: "Kitchen: Microwave+Kettle" # Plugs/5
+    6: "Spare 1" # Plugs/6
+    7: "Bedroom Plugs: Main Bed + Spare" # Plugs/1
+    8: "Bedroom Plugs: Kids + Study" # Plugs/2
+    9: "Kitchen: Fridge + Oven" # Plugs/Stove
+    10: "Geyser" # Geyser
+    11: "Outbuildings" # Outbuildings
 
 - platform: emoncms
   api_key: !secret emon_api
@@ -57,11 +48,6 @@
     - 109
     - 1010
     - 1011
-    - 1012
-    - 1013
-    - 1014
-    - 1015
-    - 1016
 
   sensor_names:
     101: "Feed: Municipal"
@@ -74,9 +60,4 @@
     108: "Bedroom Plugs: Kids + Study"
     109: "Kitchen: Fridge + Oven"
     1010: "Feed: Generator"
-    1011: "None 11"
-    1012: "None 12"
-    1013: "None 13"
-    1014: "None 14"
-    1015: "None 15"
-    1016: "None 16"
+    1011: "Outbuildings"
