@@ -1,6 +1,7 @@
 - platform: emoncms
   api_key: !secret emon_api
   url: !secret emon_url
+
   scan_interval: 5
   id: 1
   unit_of_measurement: "W"
@@ -19,16 +20,17 @@
 
   sensor_names:
     1: "Feed: Municipal" # Main Switch
-    2: "Pressure Pump" # Plugs / Pump
-    3: "Borehole" # Plugs/3
-    4: "Scullery" # Plugs/4
-    5: "Kitchen: Microwave+Kettle" # Plugs/5
+    2: "Plugs: Pressure Pump" # Plugs / Pump
+    3: "Plugs: Borehole" # Plugs/3
+    4: "Plugs: Scullery" # Plugs/4
+    5: "Plugs: Kitchen - Microwave+Kettle" # Plugs/5
     6: "Spare 1" # Plugs/6
-    7: "Bedroom Plugs: Main Bed + Spare" # Plugs/1
-    8: "Bedroom Plugs: Kids + Study" # Plugs/2
-    9: "Kitchen: Fridge + Oven" # Plugs/Stove
+    7: "Plugs: Main Bed + 2nd" # Plugs/1
+    8: "Plugs: 3rd Bed + Study" # Plugs/2
+    9: "Plugs: Kitchen - Fridge + Oven" # Plugs/Stove
     10: "Geyser" # Geyser
     11: "Outbuildings" # Outbuildings
+
 
 - platform: emoncms
   api_key: !secret emon_api
@@ -51,13 +53,13 @@
 
   sensor_names:
     101: "Feed: Municipal"
-    102: "Pressure Pump"
-    103: "Borehole"
-    104: "Scullery"
-    105: "Kitchen: Microwave+Kettle"
+    102: "Plugs: Pressure Pump"
+    103: "Plugs: Borehole"
+    104: "Plugs: Scullery"
+    105: "Plugs: Kitchen - Microwave+Kettle"
     106: "Spare 1"
-    107: "Bedroom Plugs: Main Bed + Spare"
-    108: "Bedroom Plugs: Kids + Study"
-    109: "Kitchen: Fridge + Oven"
-    1010: "Feed: Generator"
+    107: "Plugs: Plugs: Main Bed + 2nd"
+    108: "Plugs: 3rd Bed + Study"
+    109: "Plugs: Kitchen - Fridge + Oven"
+    1010: "Geyser"
     1011: "Outbuildings"
