@@ -194,7 +194,12 @@
     device_id: bd13743833f9ed28baa679e297f1eaed
     entity_id: binary_sensor.tank_full
     domain: binary_sensor
-  condition: []
+  condition:
+  - type: is_open
+    condition: device
+    device_id: bd13743833f9ed28baa679e297f1eaed
+    entity_id: binary_sensor.konnected_1d97fe_zone_5
+    domain: binary_sensor
   action:
   - type: turn_on
     device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
@@ -213,7 +218,12 @@
     device_id: bd13743833f9ed28baa679e297f1eaed
     entity_id: binary_sensor.konnected_1d97fe_zone_5
     domain: binary_sensor
-  condition: []
+  condition:
+  - type: is_open
+    condition: device
+    device_id: bd13743833f9ed28baa679e297f1eaed
+    entity_id: binary_sensor.tank_full
+    domain: binary_sensor
   action:
   - type: turn_off
     device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
