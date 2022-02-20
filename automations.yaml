@@ -189,16 +189,20 @@
   alias: Tank Low - Start Borehole
   description: ''
   trigger:
-  - type: opened
+  - type: not_opened
     platform: device
     device_id: bd13743833f9ed28baa679e297f1eaed
-    entity_id: binary_sensor.konnected_1d97fe_zone_5
+    entity_id: binary_sensor.tank_full
     domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 15
   condition:
-  - type: is_not_open
+  - type: is_open
     condition: device
     device_id: bd13743833f9ed28baa679e297f1eaed
-    entity_id: binary_sensor.tank_full
+    entity_id: binary_sensor.konnected_1d97fe_zone_5
     domain: binary_sensor
   action:
   - type: turn_on
@@ -213,17 +217,12 @@
   alias: Tank Full - Stop Borehole
   description: ''
   trigger:
-  - type: opened
+  - type: not_opened
     platform: device
     device_id: bd13743833f9ed28baa679e297f1eaed
     entity_id: binary_sensor.konnected_1d97fe_zone_5
     domain: binary_sensor
-  condition:
-  - type: is_not_open
-    condition: device
-    device_id: bd13743833f9ed28baa679e297f1eaed
-    entity_id: binary_sensor.tank_full
-    domain: binary_sensor
+  condition: []
   action:
   - type: turn_off
     device_id: dc1c082ba6bdf1a02238ac35a23d9ff9
