@@ -27,6 +27,7 @@ shell_command: !include shell_commands.yaml
 
 recorder:
   db_url: !secret homeassistant_mariabd_connecturl
+  purge_keep_days: !secret purge_keep_days
 
 discovery:
 
