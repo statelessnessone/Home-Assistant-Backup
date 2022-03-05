@@ -104,6 +104,10 @@
     device_id: bdf152c3a693446f927a87f7f9fd3d8f
     entity_id: binary_sensor.tools_door
     domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
   condition: []
   action:
   - service: notify.random_place_on_slack
@@ -119,6 +123,10 @@
     device_id: bdf152c3a693446f927a87f7f9fd3d8f
     entity_id: binary_sensor.tools_door
     domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
   condition: []
   action:
   - service: notify.random_place_on_slack
@@ -134,6 +142,10 @@
     device_id: bdf152c3a693446f927a87f7f9fd3d8f
     entity_id: binary_sensor.shed_door
     domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
   condition: []
   action:
   - service: notify.random_place_on_slack
@@ -149,6 +161,10 @@
     device_id: bdf152c3a693446f927a87f7f9fd3d8f
     entity_id: binary_sensor.shed_door
     domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
   condition: []
   action:
   - service: notify.random_place_on_slack
@@ -164,6 +180,10 @@
     device_id: bdf152c3a693446f927a87f7f9fd3d8f
     entity_id: binary_sensor.shack_door
     domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
   condition: []
   action:
   - service: notify.random_place_on_slack
@@ -179,6 +199,10 @@
     device_id: bdf152c3a693446f927a87f7f9fd3d8f
     entity_id: binary_sensor.shack_door
     domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
   condition: []
   action:
   - service: notify.random_place_on_slack
