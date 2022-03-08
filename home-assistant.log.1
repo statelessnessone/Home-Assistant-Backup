@@ -1,29 +1,11 @@
-2022-02-26 18:29:03 WARNING (SyncWorker_1) [homeassistant.loader] We found a custom integration sonoff which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-02-26 18:29:03 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration eskom_loadshedding which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-02-26 18:29:03 WARNING (SyncWorker_2) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-02-26 18:29:11 WARNING (Recorder) [homeassistant.components.recorder.util] Ended unfinished session (id=37 from 2022-02-26 07:00:16)
-2022-02-26 18:29:24 WARNING (MainThread) [homeassistant.setup] Setup of hassio is taking over 10 seconds.
-2022-02-26 18:29:39 WARNING (MainThread) [homeassistant.helpers.entity] Entity sensor.eskom_loadshedding_stage (<class 'custom_components.eskom_loadshedding.sensor.EskomStageSensor'>) implements device_state_attributes. Please report it to the custom component author.
-2022-02-26 18:29:43 WARNING (MainThread) [homeassistant.components.konnected.panel] Exception trying to connect to panel: Cannot connect to host 192.168.0.210:22213 ssl:default [Connect call failed ('192.168.0.210', 22213)]
-2022-02-26 18:29:45 WARNING (MainThread) [homeassistant.components.konnected.panel] Exception trying to connect to panel: Cannot connect to host 192.168.0.211:9939 ssl:default [Connect call failed ('192.168.0.211', 9939)]
-2022-02-26 18:29:51 WARNING (MainThread) [homeassistant.components.konnected.panel] Exception trying to connect to panel: Cannot connect to host 192.168.0.210:22213 ssl:default [Connect call failed ('192.168.0.210', 22213)]
-2022-02-26 18:30:17 WARNING (MainThread) [homeassistant.components.switch] Updating adguard switch took longer than the scheduled update interval 0:00:10
-2022-02-27 15:51:24 WARNING (MainThread) [homeassistant.components.automation.shack_door_closed] Shack Door - CLOSED: Already running
-2022-02-27 19:31:47 ERROR (MainThread) [custom_components.hacs] HacsTask<prosess_queue> failed: Repository is archived.
-2022-02-28 09:30:47 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
-2022-03-04 00:30:21 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved
-Traceback (most recent call last):
-  File "/config/custom_components/hacs/base.py", line 678, in recurring_tasks_installed
-  File "/config/custom_components/hacs/base.py", line 656, in handle_critical_repositories
-  File "/config/custom_components/hacs/utils/queue_manager.py", line 69, in execute
-    await asyncio.gather(*local_queue)
-  File "/config/custom_components/hacs/utils/decorator.py", line 28, in wrapper
-    await function(*args, **kwargs)
-  File "/config/custom_components/hacs/repositories/base.py", line 516, in common_update
-    """Common information update steps of the repository."""
-  File "/config/custom_components/hacs/repositories/base.py", line 946, in common_update_data
-    except HacsNotModifiedException:
-custom_components.hacs.exceptions.HacsRepositoryArchivedException: Repository is archived.
-2022-03-05 03:32:50 ERROR (MainThread) [homeassistant.components.forecast_solar] Error requesting forecast_solar data: 500, message='Internal Server Error', url=URL('https://148.251.178.234/estimate/-26.921123/27.4479/30/142/2.0?time=iso8601&damping=0.0')
-2022-03-05 05:30:07 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 192.168.0.18 (192.168.0.18). (Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0)
-2022-03-05 06:33:23 ERROR (MainThread) [homeassistant.components.forecast_solar] Error requesting forecast_solar data: 500, message='Internal Server Error', url=URL('https://148.251.178.234/estimate/-26.921123/27.4479/30/142/2.0?time=iso8601&damping=0.0')
+2022-03-08 06:30:44 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration eskom_loadshedding which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-03-08 06:30:44 WARNING (SyncWorker_1) [homeassistant.loader] We found a custom integration sonoff which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-03-08 06:30:44 WARNING (SyncWorker_2) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-03-08 06:30:52 WARNING (Recorder) [homeassistant.components.recorder.util] Ended unfinished session (id=40 from 2022-03-07 22:12:16)
+2022-03-08 06:31:06 WARNING (MainThread) [homeassistant.setup] Setup of hassio is taking over 10 seconds.
+2022-03-08 06:31:19 WARNING (MainThread) [homeassistant.helpers.entity] Entity sensor.eskom_loadshedding_stage (<class 'custom_components.eskom_loadshedding.sensor.EskomStageSensor'>) implements device_state_attributes. Please report it to the custom component author.
+2022-03-08 06:31:50 WARNING (MainThread) [homeassistant.components.switch] Updating adguard switch took longer than the scheduled update interval 0:00:10
+2022-03-08 06:34:58 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 192.168.0.18 (192.168.0.18). (Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0)
+2022-03-08 06:35:13 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 192.168.0.18 (192.168.0.18). (Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0)
+2022-03-08 06:35:31 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 192.168.0.18 (192.168.0.18). (Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0)
+2022-03-08 06:35:38 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 192.168.0.18 (192.168.0.18). (Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0)
