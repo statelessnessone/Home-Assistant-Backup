@@ -31,4 +31,8 @@ recorder:
 
 discovery:
 
-sensor: !include sensors.yaml
+#sensor: !include sensors.yaml
+sensor:
+  - platform: mqtt_room
+    device_id: "study"
+    state_topic: "room-assistant/mqtt-room"
