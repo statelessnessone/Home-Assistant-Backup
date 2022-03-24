@@ -6,9 +6,22 @@ homeassistant:
   unit_system: metric
   time_zone: !secret home_timezone
   name: Home
+  external_url: !secret external_url
 
   allowlist_external_dirs: # changed from whitelist_external_dirs to allowlist_external_dirs in 0.113.0
     - /config/
+
+http:
+  server_port: 8123
+  #ssl_certificate: /etc/letsencrypt/live/hass.example.com/fullchain.pem
+  #ssl_key: /etc/letsencrypt/live/hass.example.com/privkey.pem
+  cors_allowed_origins:
+    - !secret external_url
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - !secret proxy_server
+  ip_ban_enabled: false
+  login_attempts_threshold: 0
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
