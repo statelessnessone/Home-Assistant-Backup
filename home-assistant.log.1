@@ -1,12 +1,243 @@
-2022-03-24 15:25:49 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration eskom_loadshedding which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-03-24 15:25:49 WARNING (SyncWorker_1) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-03-24 15:25:49 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration sonoff which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-03-24 15:26:01 WARNING (MainThread) [homeassistant.helpers.entity] Entity sensor.eskom_loadshedding_stage (<class 'custom_components.eskom_loadshedding.sensor.EskomStageSensor'>) implements device_state_attributes. Please report it to the custom component author.
-2022-03-24 16:03:40 ERROR (MainThread) [aiohttp.server] Error handling request
+2022-03-24 16:07:24 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration eskom_loadshedding which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-03-24 16:07:24 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration sonoff which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-03-24 16:07:24 WARNING (SyncWorker_1) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-03-24 16:07:37 WARNING (MainThread) [homeassistant.helpers.entity] Entity sensor.eskom_loadshedding_stage (<class 'custom_components.eskom_loadshedding.sensor.EskomStageSensor'>) implements device_state_attributes. Please report it to the custom component author.
+2022-03-24 16:08:00 WARNING (MainThread) [homeassistant.components.switch] Updating adguard switch took longer than the scheduled update interval 0:00:10
+2022-03-24 19:08:11 ERROR (MainThread) [homeassistant.components.forecast_solar] Unexpected error fetching forecast_solar data: The Forecast.Solar API is unreachable, 
 Traceback (most recent call last):
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_protocol.py", line 334, in data_received
-    messages, upgraded, tail = self._request_parser.feed_data(data)
-  File "aiohttp/_http_parser.pyx", line 551, in aiohttp._http_parser.HttpParser.feed_data
-aiohttp.http_exceptions.BadStatusLine: 400, message="Bad status line 'Invalid method encountered'"
-2022-03-24 16:03:45 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 192.168.0.145 (192.168.0.145). (Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0)
-2022-03-24 16:07:12 ERROR (MainThread) [homeassistant.components.hassio.handler] Timeout on /homeassistant/restart request
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 187, in _async_refresh
+    self.data = await self._async_update_data()
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 147, in _async_update_data
+    return await self.update_method()
+  File "/usr/local/lib/python3.9/site-packages/forecast_solar/__init__.py", line 138, in estimate
+    data = await self._request(
+  File "/usr/local/lib/python3.9/site-packages/forecast_solar/__init__.py", line 105, in _request
+    raise ForecastSolarConnectionError(
+forecast_solar.exceptions.ForecastSolarConnectionError: The Forecast.Solar API is unreachable, 
+2022-03-24 20:02:36 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-24 20:35:33 ERROR (MainThread) [homeassistant.components.apple_tv.config_flow] Unexpected exception
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 270, in async_find_device_wrapper
+    await self.async_find_device(allow_exist)
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 283, in async_find_device
+    self.atv, self.atv_identifiers = await device_scan(
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 57, in device_scan
+    scan_result = await scan(loop, timeout=3, hosts=_host_filter(), aiozc=aiozc)
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in scan
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in <listcomp>
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1307, in __init__
+    self._ip = self._ip_int_from_string(addr_str)
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1194, in _ip_int_from_string
+    raise AddressValueError("Expected 4 octets in %r" % ip_str)
+ipaddress.AddressValueError: Expected 4 octets in '2c0f:f4c0:118c:40e0:db:f108:bf16:6b22'
+2022-03-24 20:43:43 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-24 20:44:28 ERROR (MainThread) [homeassistant.components.apple_tv.config_flow] Unexpected exception
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 270, in async_find_device_wrapper
+    await self.async_find_device(allow_exist)
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 283, in async_find_device
+    self.atv, self.atv_identifiers = await device_scan(
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 57, in device_scan
+    scan_result = await scan(loop, timeout=3, hosts=_host_filter(), aiozc=aiozc)
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in scan
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in <listcomp>
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1307, in __init__
+    self._ip = self._ip_int_from_string(addr_str)
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1194, in _ip_int_from_string
+    raise AddressValueError("Expected 4 octets in %r" % ip_str)
+ipaddress.AddressValueError: Expected 4 octets in '2c0f:f4c0:118c:40e0:db:f108:bf16:6b22'
+2022-03-24 20:52:25 ERROR (MainThread) [homeassistant.components.apple_tv.config_flow] Unexpected exception
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 270, in async_find_device_wrapper
+    await self.async_find_device(allow_exist)
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 283, in async_find_device
+    self.atv, self.atv_identifiers = await device_scan(
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 57, in device_scan
+    scan_result = await scan(loop, timeout=3, hosts=_host_filter(), aiozc=aiozc)
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in scan
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in <listcomp>
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1307, in __init__
+    self._ip = self._ip_int_from_string(addr_str)
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1194, in _ip_int_from_string
+    raise AddressValueError("Expected 4 octets in %r" % ip_str)
+ipaddress.AddressValueError: Expected 4 octets in '2c0f:f4c0:118c:40e0:db:f108:bf16:6b22'
+2022-03-24 21:05:18 ERROR (MainThread) [homeassistant.components.apple_tv.config_flow] Unexpected exception
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 270, in async_find_device_wrapper
+    await self.async_find_device(allow_exist)
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 283, in async_find_device
+    self.atv, self.atv_identifiers = await device_scan(
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 57, in device_scan
+    scan_result = await scan(loop, timeout=3, hosts=_host_filter(), aiozc=aiozc)
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in scan
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in <listcomp>
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1307, in __init__
+    self._ip = self._ip_int_from_string(addr_str)
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1194, in _ip_int_from_string
+    raise AddressValueError("Expected 4 octets in %r" % ip_str)
+ipaddress.AddressValueError: Expected 4 octets in '2c0f:f4c0:118c:40e0:db:f108:bf16:6b22'
+2022-03-24 21:15:39 ERROR (MainThread) [homeassistant.components.apple_tv.config_flow] Unexpected exception
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 270, in async_find_device_wrapper
+    await self.async_find_device(allow_exist)
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 283, in async_find_device
+    self.atv, self.atv_identifiers = await device_scan(
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 57, in device_scan
+    scan_result = await scan(loop, timeout=3, hosts=_host_filter(), aiozc=aiozc)
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in scan
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in <listcomp>
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1307, in __init__
+    self._ip = self._ip_int_from_string(addr_str)
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1194, in _ip_int_from_string
+    raise AddressValueError("Expected 4 octets in %r" % ip_str)
+ipaddress.AddressValueError: Expected 4 octets in '2c0f:f4c0:118c:40e0:db:f108:bf16:6b22'
+2022-03-25 01:46:30 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-25 10:22:15 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-25 15:37:25 ERROR (MainThread) [homeassistant.components.apple_tv.config_flow] Unexpected exception
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 270, in async_find_device_wrapper
+    await self.async_find_device(allow_exist)
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 283, in async_find_device
+    self.atv, self.atv_identifiers = await device_scan(
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 57, in device_scan
+    scan_result = await scan(loop, timeout=3, hosts=_host_filter(), aiozc=aiozc)
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in scan
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in <listcomp>
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1307, in __init__
+    self._ip = self._ip_int_from_string(addr_str)
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1194, in _ip_int_from_string
+    raise AddressValueError("Expected 4 octets in %r" % ip_str)
+ipaddress.AddressValueError: Expected 4 octets in '2c0f:f4c0:118c:40e0:db:f108:bf16:6b22'
+2022-03-25 15:40:50 ERROR (MainThread) [homeassistant.components.apple_tv.config_flow] Unexpected exception
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 270, in async_find_device_wrapper
+    await self.async_find_device(allow_exist)
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 283, in async_find_device
+    self.atv, self.atv_identifiers = await device_scan(
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 57, in device_scan
+    scan_result = await scan(loop, timeout=3, hosts=_host_filter(), aiozc=aiozc)
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in scan
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in <listcomp>
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1307, in __init__
+    self._ip = self._ip_int_from_string(addr_str)
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1194, in _ip_int_from_string
+    raise AddressValueError("Expected 4 octets in %r" % ip_str)
+ipaddress.AddressValueError: Expected 4 octets in '2c0f:f4c0:118c:40e0:db:f108:bf16:6b22'
+2022-03-25 19:18:11 ERROR (MainThread) [homeassistant.components.apple_tv.config_flow] Unexpected exception
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 270, in async_find_device_wrapper
+    await self.async_find_device(allow_exist)
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 283, in async_find_device
+    self.atv, self.atv_identifiers = await device_scan(
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 57, in device_scan
+    scan_result = await scan(loop, timeout=3, hosts=_host_filter(), aiozc=aiozc)
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in scan
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in <listcomp>
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1307, in __init__
+    self._ip = self._ip_int_from_string(addr_str)
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1194, in _ip_int_from_string
+    raise AddressValueError("Expected 4 octets in %r" % ip_str)
+ipaddress.AddressValueError: Expected 4 octets in '2c0f:f4c0:118c:40e0:db:f108:bf16:6b22'
+2022-03-25 19:40:10 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-25 20:42:52 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-26 03:00:21 WARNING (MainThread) [homeassistant.components.websocket_api.http.connection] [140193065412256] Disconnected: Did not receive auth message within 10 seconds
+2022-03-26 05:10:03 ERROR (MainThread) [homeassistant.components.forecast_solar] Unexpected error fetching forecast_solar data: The Forecast.Solar API is unreachable, 
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 187, in _async_refresh
+    self.data = await self._async_update_data()
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 147, in _async_update_data
+    return await self.update_method()
+  File "/usr/local/lib/python3.9/site-packages/forecast_solar/__init__.py", line 138, in estimate
+    data = await self._request(
+  File "/usr/local/lib/python3.9/site-packages/forecast_solar/__init__.py", line 105, in _request
+    raise ForecastSolarConnectionError(
+forecast_solar.exceptions.ForecastSolarConnectionError: The Forecast.Solar API is unreachable, 
+2022-03-26 14:31:41 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-26 23:23:48 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-27 10:59:28 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-27 18:50:41 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-27 20:40:54 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-27 20:43:03 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-27 22:14:34 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-27 22:19:46 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-27 22:54:42 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-27 23:59:49 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-28 01:30:27 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-28 03:10:15 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-28 03:15:30 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-28 03:55:36 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-28 05:00:33 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-28 05:26:18 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-28 05:45:50 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-28 07:22:34 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-28 08:21:20 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-28 11:34:23 ERROR (MainThread) [homeassistant.components.apple_tv.config_flow] Unexpected exception
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 270, in async_find_device_wrapper
+    await self.async_find_device(allow_exist)
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 283, in async_find_device
+    self.atv, self.atv_identifiers = await device_scan(
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 57, in device_scan
+    scan_result = await scan(loop, timeout=3, hosts=_host_filter(), aiozc=aiozc)
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in scan
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in <listcomp>
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1307, in __init__
+    self._ip = self._ip_int_from_string(addr_str)
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1194, in _ip_int_from_string
+    raise AddressValueError("Expected 4 octets in %r" % ip_str)
+ipaddress.AddressValueError: Expected 4 octets in '2c0f:f4c0:118c:40e0:db:f108:bf16:6b22'
+2022-03-28 20:43:35 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-28 23:03:24 ERROR (MainThread) [homeassistant.components.apple_tv.config_flow] Unexpected exception
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 270, in async_find_device_wrapper
+    await self.async_find_device(allow_exist)
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 283, in async_find_device
+    self.atv, self.atv_identifiers = await device_scan(
+  File "/usr/src/homeassistant/homeassistant/components/apple_tv/config_flow.py", line 57, in device_scan
+    scan_result = await scan(loop, timeout=3, hosts=_host_filter(), aiozc=aiozc)
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in scan
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/site-packages/pyatv/__init__.py", line 58, in <listcomp>
+    aiozc, hosts=[IPv4Address(host) for host in hosts]
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1307, in __init__
+    self._ip = self._ip_int_from_string(addr_str)
+  File "/usr/local/lib/python3.9/ipaddress.py", line 1194, in _ip_int_from_string
+    raise AddressValueError("Expected 4 octets in %r" % ip_str)
+ipaddress.AddressValueError: Expected 4 octets in '2c0f:f4c0:118c:40e0:db:f108:bf16:6b22'
+2022-03-29 06:13:03 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-29 10:57:31 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-29 12:38:00 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-29 13:33:28 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-29 16:35:20 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-29 17:30:21 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-29 18:35:32 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-29 19:20:40 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-29 20:03:57 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-29 20:55:32 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-29 22:56:05 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-30 00:14:29 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-30 00:49:36 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-30 01:24:36 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-30 02:16:13 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-30 03:06:24 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-30 04:43:58 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-30 04:56:24 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
+2022-03-30 06:55:31 ERROR (MainThread) [homeassistant.components.ipp.coordinator] Error fetching ipp data: Invalid response from API: Timeout occurred while connecting to IPP server.
