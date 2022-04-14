@@ -44,8 +44,18 @@ recorder:
 
 discovery:
 
-#sensor: !include sensors.yaml
-sensor:
-  - platform: mqtt_room
-    device_id: "study"
-    state_topic: "room-assistant/mqtt-room"
+sensor: !include sensors.yaml
+#sensor:
+#  - platform: mqtt_room
+#    device_id: "study"
+#    state_topic: "room-assistant/mqtt-room"
+
+iperf3:
+  scan_interval: 3600
+  monitored_conditions:
+    - download
+    - upload
+  hosts:
+    - host: 192.168.0.100
+    - host: 192.168.0.101
+    - host: 192.168.0.102

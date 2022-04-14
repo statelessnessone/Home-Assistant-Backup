@@ -1,4 +1,0 @@
-sensor:
-  - platform: mqtt_room
-    state: "S" 
-    device_id: 123testid
