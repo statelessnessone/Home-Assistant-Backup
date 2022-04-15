@@ -51,7 +51,7 @@ sensor: !include sensors.yaml
 #    state_topic: "room-assistant/mqtt-room"
 
 iperf3:
-  scan_interval: 3600
+  scan_interval: "01:00"
   monitored_conditions:
     - download
     - upload
